@@ -1,0 +1,85 @@
+﻿<Window x:Class="CarSystemGUI.AddUserCar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarSystemGUI"
+        mc:Ignorable="d"
+        Title="AddUserCar" Height="450" Width="300">
+
+    <Grid Name="gr">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+
+        <Grid.Resources>
+            <Style TargetType="TextBox" BasedOn="{StaticResource TextBoxStyle2}"/>
+            <Style TargetType="Label" BasedOn="{StaticResource LabelStyle}" />
+        </Grid.Resources>
+
+        <Label Name="lblBrand" Content="Brand:"  Grid.Row="0" />
+        <ComboBox Name="cmbBrand" Grid.Row="0" IsReadOnly="False" ItemsSource="{Binding Brand}"  SelectedValue="{Binding Path=SelectedBrand}" 
+                  Height="30" Width="100" HorizontalAlignment="Left"  Margin="135,20,0,15" >
+
+        </ComboBox>
+
+        <Label Name="lblMoedl" Content="Model:"  Grid.Row="1" />
+        <ComboBox Name="cmbModel" Grid.Row="1" IsReadOnly="False" ItemsSource="{Binding Model}" SelectedValue="{Binding Path=SelectedModel}" 
+                  Height="30" Width="100" HorizontalAlignment="Left"  Margin="135,20,0,15"/>
+
+        <Label Name="lblVinNumber" Grid.Row="2" Content="VIN Number" Width="100"/>
+        <TextBox Name="txtVinNumber" Grid.Row="2" IsReadOnly="False" >
+            <TextBox.Text>
+                <Binding Path="VINNumber"  ValidatesOnDataErrors="True" NotifyOnValidationError="True"
+             UpdateSourceTrigger="PropertyChanged" >
+                    <Binding.ValidationRules>
+                        <local:CustomRule PropertyName="VinNumber"  />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Label  Name="lblRegNumber" Grid.Row="3">
+            <TextBlock>Regustration<LineBreak/>Number:</TextBlock>
+        </Label>
+        <TextBox Name="txtRegNumber" Grid.Row="3" IsReadOnly="False" >
+            <TextBox.Text>
+                <Binding Path="RegNumber"  ValidatesOnDataErrors="True" NotifyOnValidationError="True"
+             UpdateSourceTrigger="LostFocus" >
+                    <Binding.ValidationRules>
+                        <local:CustomRule PropertyName="RegNumber"  />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Label Name="lblColour" Content="Colour:"  Grid.Row="4" />
+        <ComboBox Name="cmbColour" Grid.Row="4" IsReadOnly="False" Height="30" Width="100" Margin="135,20,0,15"
+               HorizontalAlignment="Left"  ItemsSource="{Binding Colour}" SelectedValue="{Binding Path=SelectedColour}"/>
+
+        <Button x:Name="btnAdd" Content="Add new car" IsDefault="True" Grid.Row="5"  Click="BtnAdd_Click" Background="Transparent">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text.Length, ElementName=cmbBrand, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Text.Length, ElementName=cmbModel, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Text.Length, ElementName=cmbColour, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+    </Grid>
+</Window>

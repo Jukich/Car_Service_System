@@ -1,0 +1,179 @@
+﻿<Window x:Class="CarSystemGUI.CarInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarSystemGUI"
+        mc:Ignorable="d"
+        Title="CarInfo" Height="450" Width="600">
+    <Grid Name="gr">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition  Height="10*"/>
+            <RowDefinition  Height="10*"/>
+            <RowDefinition  Height="10*"/>
+            <RowDefinition  Height="11*"/>
+            <RowDefinition  Height="10*"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid.Resources>
+            <Style TargetType="TextBox" BasedOn="{StaticResource TextBoxStyle2}"/>
+            <Style TargetType="Label" BasedOn="{StaticResource LabelStyle}" />
+        </Grid.Resources>
+
+        <Label Name="lblBrand" FontSize="25" Content="Brand:"  Grid.Row="0" />
+        <ComboBox Name="cmbBrand" Grid.Row="0" IsReadOnly="False" ItemsSource="{Binding Brand}"  SelectedValue="{Binding Path=SelectedBrand, UpdateSourceTrigger=PropertyChanged}" 
+                  Height="30" Width="100" HorizontalAlignment="Left"  Margin="135,20,0,15" Visibility="Hidden" />
+        <TextBox Name="txtBrand" HorizontalAlignment="Left" Height="35" FontSize="25"  Margin="125,15,0,15" BorderBrush="Transparent" 
+                 Foreground="Black" Text="{Binding Path=SelectedBrand, Mode=OneWay}" IsReadOnly="True"/>
+
+        <Label Name="lblMoedl" Content="Model:"  Grid.Row="1" FontSize="25" />
+        <ComboBox Name="cmbModel" Grid.Row="1" IsReadOnly="False" ItemsSource="{Binding Model}" SelectedValue="{Binding Path=SelectedModel}" 
+                  Height="30" Width="100" HorizontalAlignment="Left"  Margin="135,20,0,15" Visibility="Hidden"/>
+        <TextBox Name="txtModel" FontSize="25" HorizontalAlignment="Left" Height="35" Grid.Row="1" Margin="125,15,0,15" BorderBrush="Transparent" 
+                 Foreground="Black" Text="{Binding SelectedModel, Mode=OneWay}" IsReadOnly="True"/>
+
+        <Label Name="lblVinNumber" Grid.Row="2" Content="VIN: " FontSize="25" Width="100"/>
+        <TextBox Name="txtVinNumber" HorizontalAlignment="Left" Grid.Row="2" Margin="125,25,0,15" BorderBrush="Transparent"
+                 Foreground="Black"  FontSize="14" Height="25"  IsReadOnly="True">
+            <TextBox.Text>
+                <Binding Path="VINNumber"  ValidatesOnDataErrors="True" NotifyOnValidationError="True"
+             UpdateSourceTrigger="PropertyChanged" >
+                    <Binding.ValidationRules>
+                        <local:CustomRule PropertyName="VinNumber"  />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Label  Name="lblRegNumber" FontSize="16" Grid.Row="3" Height="50" Margin="0,10.6,0,10.8" Width="105">
+            <TextBlock Height="50" FontWeight="SemiBold">Registration<LineBreak/>Number:</TextBlock>
+        </Label>
+        <TextBox Name="txtRegNumber" HorizontalAlignment="Left" Grid.Row="3" Margin="125,15,0,15" BorderBrush="Transparent"
+                 Foreground="Black"  FontSize="25" Height="35"  IsReadOnly="True">
+            <TextBox.Text>
+                <Binding Path="RegNumber"  ValidatesOnDataErrors="True" NotifyOnValidationError="True"
+             UpdateSourceTrigger="LostFocus" >
+                    <Binding.ValidationRules>
+                        <local:CustomRule PropertyName="RegNumber"  />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Label Name="lblColour" Content="Colour:" FontSize="25"  Grid.Row="4" />
+        <ComboBox Name="cmbColour" Grid.Row="4" IsReadOnly="False" Height="30" Width="100" Margin="135,20,0,15"
+               HorizontalAlignment="Left"  ItemsSource="{Binding Colour}" SelectedValue="{Binding Path=SelectedColour}" Visibility="Hidden"/>
+        <TextBox Name="txtColour" HorizontalAlignment="Left" Grid.Row="4" Margin="125,10,0,15" BorderBrush="Transparent"
+                 Foreground="Black"  FontSize="25" Height="35" Text="{Binding SelectedColour}" IsReadOnly="True" />
+
+        <Button x:Name="btnEdit" Content="Edit" IsDefault="True" Grid.Row="5" Grid.ColumnSpan="2" FontSize="30" Visibility="Visible"
+                Background="Transparent" Click="BtnEdit_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" Visibility="Hidden" Grid.Column="1" IsDefault="True" Grid.Row="5" FontSize="30"   
+                Background="Transparent" Click="BtnCancel_Click"  HorizontalAlignment="Right" Width="293"/>
+        <Button x:Name="btnStopEdit" Width="293" HorizontalAlignment="Left" Content="Save Changes" Visibility="Hidden" 
+                IsDefault="True" Grid.Row="5" FontSize="30"   Background="Transparent" Click="BtnStopEdit_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text.Length, ElementName=cmbBrand, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Text.Length, ElementName=cmbModel, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Text.Length, ElementName=cmbColour, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        
+        
+
+        <DataGrid HorizontalGridLinesBrush="Transparent" VerticalGridLinesBrush="Transparent"  ColumnWidth="*" 
+                  ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible"  
+                  RowBackground="Transparent" Background="Transparent" SelectionMode="Extended"  CanUserAddRows="False" 
+                  Name="datagr" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" RowHeight="28" AutoGenerateColumns="False" FontSize="20" 
+                  ItemsSource="{Binding Repairs}">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="IsEnabled" Value="False"/>
+                </Style>
+                <Style BasedOn="{StaticResource {x:Type DataGridRowHeader}}" TargetType="{x:Type DataGridRowHeader}">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="Foreground" Value="White"/>
+                </Style>
+                <Style  TargetType="{x:Type DataGridCell}">
+                    <Setter Property="Foreground" Value="Black" />
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="BorderBrush" Value="Transparent" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns >
+                <DataGridTextColumn  MaxWidth="0" Foreground="Black"  x:Name="datagrBrandId" FontSize="17" Binding="{Binding Id}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Date" Width="15*" Foreground="Black"  x:Name="datagrBrahdCol" FontSize="17" Binding="{Binding DayOfRepair,  StringFormat='dd-MM-yyyy'}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Price" Width="10*" Foreground="Black"  x:Name="datagrRegNumCol" FontSize="17" Binding="{Binding PriceOfRepair}" IsReadOnly="True" >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn Width="10*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnMoreInfo" Height="20" Width="70" BorderBrush="White" 
+                                    Click="BtnMoreInfo_Click" IsEnabled="True" Background="Transparent" >
+                                <TextBlock IsEnabled="True" Text="More info" FontSize="14" Margin="0,-3,0,0"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Label Name="lblAdd" Content="New repair:" VerticalAlignment="Top" Width="150" FontSize="15"  Grid.Row="3"
+               HorizontalAlignment="Center" Grid.Column="1" Height="30" Margin="73.2,64.6,73.6,0" Grid.RowSpan="2"/>
+
+        <DatePicker  HorizontalAlignment="Left" Grid.Row="4" Grid.Column="1" SelectedDate="{Binding Path=DateOfRepair, Mode=TwoWay}"
+              Margin="73.2,26.2,0,0"  VerticalAlignment="Top" Width="120" />
+
+        <Label Name="lblAddPrice" Content="Price:" FontSize="15"  Grid.Row="4" Grid.Column="1" Height="28"
+               VerticalAlignment="Center" Margin="73.2,49.8,0,67" Width="50" Grid.RowSpan="2"/>
+
+        <TextBox Name="txtAddPrice" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" Height="20"  Margin="0,53.8,90.6,0.2" Width="59"
+                 Foreground="Black"  FontSize="15"  >
+            <TextBox.Text>
+                <Binding Path="Price"  ValidatesOnDataErrors="True" NotifyOnValidationError="True"
+                      UpdateSourceTrigger="LostFocus" >
+                    <Binding.ValidationRules>
+                        <local:CustomRule PropertyName="Price"  />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Button x:Name="btnAddRepair" Content="Add" IsDefault="True" Grid.Row="4" Grid.ColumnSpan="1" Grid.Column="1" FontSize="15"
+                Visibility="Visible" VerticalAlignment="Bottom" HorizontalAlignment="Right"  Height="30" Width="50"  Click="BtnAddRepair_Click"   
+                Background="Transparent" Margin="0,0,23.6,23.2" RenderTransformOrigin="0.524,0.273"/>
+
+        <Button x:Name="btnDeleteCar" Content="Delete car" IsDefault="True" Grid.Row="0" Grid.Column="1" FontSize="15"
+                Visibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Center"  Height="30" Width="100"     
+                Background="Transparent" Click="BtnDeleteCar_Click" />
+
+
+
+    </Grid>
+</Window>

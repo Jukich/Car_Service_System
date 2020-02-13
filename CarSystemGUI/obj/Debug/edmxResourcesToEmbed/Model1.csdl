@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarServiceDBModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="imageUrl" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK_Car_Brand" FromRole="Brand" ToRole="Car" />
+    <NavigationProperty Name="Models" Relationship="Self.FK_Model_Brand" FromRole="Brand" ToRole="Model" />
+  </EntityType>
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WINnumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RegNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BrandID" Type="Int32" Nullable="false" />
+    <Property Name="ModelID" Type="Int32" Nullable="false" />
+    <Property Name="Colour" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="Brand" Relationship="Self.FK_Car_Brand" FromRole="Car" ToRole="Brand" />
+    <NavigationProperty Name="Model" Relationship="Self.FK_Car_Model" FromRole="Car" ToRole="Model" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Car_Users" FromRole="Car" ToRole="Users" />
+    <NavigationProperty Name="Repairs" Relationship="Self.FK_Repair_Car" FromRole="Car" ToRole="Repair" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BrandID" Type="Int32" />
+    <NavigationProperty Name="Brand" Relationship="Self.FK_Model_Brand" FromRole="Model" ToRole="Brand" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK_Car_Model" FromRole="Model" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Repair">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DayOfRepair" Type="DateTime" Precision="0" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PriceOfRepair" Type="Double" />
+    <Property Name="CarID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Car" Relationship="Self.FK_Repair_Car" FromRole="Repair" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Surename" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdCardNumber" Type="Int64" Nullable="false" />
+    <Property Name="EGN" Type="Int64" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK_Car_Users" FromRole="Users" ToRole="Car" />
+  </EntityType>
+  <Association Name="FK_Car_Brand">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="1" />
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Model_Brand">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+    <End Role="Model" Type="Self.Model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Model">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Car_Model">
+    <End Role="Model" Type="Self.Model" Multiplicity="1" />
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="ModelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Car_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Repair_Car">
+    <End Role="Car" Type="Self.Car" Multiplicity="1" />
+    <End Role="Repair" Type="Self.Repair" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Repair">
+        <PropertyRef Name="CarID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CarServiceDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Brands" EntityType="Self.Brand" />
+    <EntitySet Name="Cars" EntityType="Self.Car" />
+    <EntitySet Name="Models" EntityType="Self.Model" />
+    <EntitySet Name="Repairs" EntityType="Self.Repair" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Car_Brand" Association="Self.FK_Car_Brand">
+      <End Role="Brand" EntitySet="Brands" />
+      <End Role="Car" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Model_Brand" Association="Self.FK_Model_Brand">
+      <End Role="Brand" EntitySet="Brands" />
+      <End Role="Model" EntitySet="Models" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Car_Model" Association="Self.FK_Car_Model">
+      <End Role="Model" EntitySet="Models" />
+      <End Role="Car" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Car_Users" Association="Self.FK_Car_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Car" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Repair_Car" Association="Self.FK_Repair_Car">
+      <End Role="Car" EntitySet="Cars" />
+      <End Role="Repair" EntitySet="Repairs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

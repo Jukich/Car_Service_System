@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CarServiceDBModel1StoreContainer" CdmEntityContainer="CarServiceDBEntities1">
+    <EntitySetMapping Name="Brands">
+      <EntityTypeMapping TypeName="CarServiceDBModel1.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cars">
+      <EntityTypeMapping TypeName="CarServiceDBModel1.Car">
+        <MappingFragment StoreEntitySet="Car">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WINnumber" ColumnName="WINnumber" />
+          <ScalarProperty Name="RegNumber" ColumnName="RegNumber" />
+          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="Colour" ColumnName="Colour" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Models">
+      <EntityTypeMapping TypeName="CarServiceDBModel1.Model">
+        <MappingFragment StoreEntitySet="Model">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Repairs">
+      <EntityTypeMapping TypeName="CarServiceDBModel1.Repair">
+        <MappingFragment StoreEntitySet="Repair">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DayOfRepair" ColumnName="DayOfRepair" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PriceOfRepair" ColumnName="PriceOfRepair" />
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CarServiceDBModel1.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surename" ColumnName="Surename" />
+          <ScalarProperty Name="IdCardNumber" ColumnName="IdCardNumber" />
+          <ScalarProperty Name="EGN" ColumnName="EGN" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

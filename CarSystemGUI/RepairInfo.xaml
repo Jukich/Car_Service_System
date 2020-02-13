@@ -1,0 +1,47 @@
+﻿<Window x:Class="CarSystemGUI.RepairInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarSystemGUI"
+        mc:Ignorable="d"
+        Title="RepairInfo" Height="450" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid.Resources>
+            <Style TargetType="TextBox" BasedOn="{StaticResource TextBoxStyle2}"/>
+            <Style TargetType="Label" BasedOn="{StaticResource LabelStyle}" />
+        </Grid.Resources>
+
+        <Label Name="lblDate" FontSize="20" Content="Date of repair:" Height="35" Width="200"  Grid.Row="0" VerticalAlignment="Top" />
+        <DatePicker  HorizontalAlignment="Left"  SelectedDate="{Binding Path=DateOfRepair, Mode=TwoWay}"
+              Margin="10,40,0,0"  VerticalAlignment="Top" Width="120" />
+
+        <Label Name="lblDecription" Content="Description:"  Width="200" VerticalAlignment="Top" Grid.Row="1" FontSize="20" Margin="0,6,0,0" />
+        <TextBox Name="txtDecription"  FontSize="20" HorizontalAlignment="Left" Height="200" Width="284" Grid.Row="1" BorderBrush="Black" 
+               VerticalAlignment="Bottom"   Foreground="Black" Text="{Binding Path=Description, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" IsReadOnly="False" Margin="1,0,0,4"/>
+        <Line X1="200" Y1="1100" X2="0"  Y2="1100" VerticalAlignment="Top" Grid.Row="2"
+              Stroke="Black" StrokeThickness="1" Stretch="Uniform" />
+
+        <Label Name="lblPrice" Content="Price:"  Width="87" VerticalAlignment="Center" Grid.Row="2" FontSize="20" Margin="0,24" />
+        <TextBox Name="txtPrice"  FontSize="20" HorizontalAlignment="Center" Height="25" Width="100" Grid.Row="2" BorderBrush="Transparent" 
+               VerticalAlignment="Center"   Foreground="Black"  >
+            <TextBox.Text>
+                <Binding Path="Price"  ValidatesOnDataErrors="True" NotifyOnValidationError="True"
+                      UpdateSourceTrigger="LostFocus" >
+                    <Binding.ValidationRules>
+                        <local:CustomRule PropertyName="Price"  />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,89 @@
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.csprojAssemblyReference.cache
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\MainWindow.g.cs
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\App.g.cs
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI_MarkupCompile.cache
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI_MarkupCompile.lref
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\bin\Debug\CarSystemGUI.exe.config
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\bin\Debug\CarSystemGUI.exe
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\bin\Debug\CarSystemGUI.pdb
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\MainWindow.baml
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.g.resources
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.Properties.Resources.resources
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.csproj.GenerateResource.cache
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.csproj.CoreCompileInputs.cache
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.exe
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.pdb
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\Homepage.g.cs
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\Homepage.baml
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\bin\Debug\EntityFramework.dll
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\bin\Debug\EntityFramework.xml
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.csproj.CopyComplete
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\Cars.g.cs
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\Cars.baml
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\bin\Debug\CarServiceSystem.exe
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\bin\Debug\CarServiceSystem.pdb
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\bin\Debug\CarServiceSystem.exe.config
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI_Content.g.cs
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\Models.g.cs
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\Models.baml
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\AddBrand.g.cs
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\AddBrand.baml
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\Users.g.cs
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\Users.baml
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\UserInfo.g.cs
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\UserInfo.baml
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\App.baml
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\AddUser.g.cs
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\AddUser.baml
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\AddUserCar.g.cs
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\AddUserCar.baml
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\CarInfo.g.cs
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\CarInfo.baml
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\RepairInfo.g.cs
+C:\Users\Jukich\source\repos\CarServiceSystem\CarSystemGUI\obj\Debug\RepairInfo.baml
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.csprojAssemblyReference.cache
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\AddBrand.g.cs
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\AddUser.g.cs
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\AddUserCar.g.cs
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\CarInfo.g.cs
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\Cars.g.cs
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\Homepage.g.cs
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\MainWindow.g.cs
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\Models.g.cs
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\RepairInfo.g.cs
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\UserInfo.g.cs
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\Users.g.cs
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\App.g.cs
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI_Content.g.cs
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI_MarkupCompile.cache
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI_MarkupCompile.lref
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.exe
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.pdb
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\bin\Debug\CarSystemGUI.exe.config
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\bin\Debug\CarSystemGUI.exe
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\bin\Debug\CarSystemGUI.pdb
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\bin\Debug\EntityFramework.dll
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\bin\Debug\EntityFramework.xml
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\App.baml
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\AddBrand.baml
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\AddUser.baml
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\AddUserCar.baml
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\CarInfo.baml
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\Cars.baml
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\Homepage.baml
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\MainWindow.baml
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\Models.baml
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\RepairInfo.baml
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\UserInfo.baml
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\Users.baml
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.g.resources
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.Properties.Resources.resources
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.csproj.GenerateResource.cache
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.csproj.CoreCompileInputs.cache
+C:\Users\Jukich\Desktop\CarService Project\CarService Project\CarServiceSystem\CarSystemGUI\obj\Debug\CarSystemGUI.csproj.CopyComplete
